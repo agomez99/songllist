@@ -51,7 +51,7 @@ class App extends Component {
             <table class="table">
               <thead>
                   <th>    </th>
-                  <th>Author</th>
+                  <th>Artist</th>
                   <th>Title</th>
                   <th>    </th>
 
@@ -60,12 +60,14 @@ class App extends Component {
                 {this.state.boards.map(board =>
                   <tr>
                     <td><img src="https://files.softicons.com/download/system-icons/lozengue-filetype-icons-by-gurato/png/128/MP3.png"style={{height:"70px"}}/></td>
-                    <td style={{overflow:"hidden"}}>{board.author}</td>
-                    <td><Link style={{overflow:"hidden"}}to={`/show/${board.key}`}>{board.title}</Link></td>
+                    <td style={{verticalAlign:"middle"}}>{board.author}</td>
+                    <td style={{verticalAlign:"middle"}}>{board.title}</td>
                     <td><ReactAudioPlayer
                     src={board.music}
                     controls
                       />
+                  </td>
+                  <td><Link style={{overflow:"hidden"}}to={`/show/${board.key}`}><button class="btn btn-primary" >Edit</button></Link>&nbsp;
                   </td>
                   </tr>
                 )}
